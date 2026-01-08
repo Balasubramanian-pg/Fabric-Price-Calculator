@@ -1,0 +1,206 @@
+:root {
+    --bg: #0a0d12;
+    --panel: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.12);
+    --yellow: #f7c948;
+    --text: #e7e9ec;
+    --muted: #9aa0a6;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: radial-gradient(1200px 600px at top, #121827, var(--bg));
+    font-family: "Afacad", system-ui, sans-serif;
+    color: var(--text);
+}
+
+.app {
+    max-width: 1100px;
+    margin: auto;
+    padding: 48px 24px 80px;
+}
+
+header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 24px;
+    align-items: center;
+    margin-bottom: 48px;
+}
+
+.logo svg {
+    width: 56px;
+    height: 56px;
+    fill: var(--yellow);
+    filter:
+        drop-shadow(0 0 12px rgba(247,201,72,0.45))
+        drop-shadow(0 0 28px rgba(247,201,72,0.25));
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+header p {
+    margin-top: 6px;
+    color: var(--muted);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    gap: 32px;
+}
+
+.panel {
+    background: var(--panel);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 28px;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.panel h2 {
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 6px;
+}
+
+select {
+    width: 100%;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 12px 14px;
+    background: linear-gradient(180deg, #0f1422, #0b0f1a);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    appearance: none;
+}
+
+select option {
+    font-family: "Afacad", system-ui, sans-serif;
+    font-size: 15px;
+    background-color: #0b0f1a;
+    color: var(--text);
+}
+
+select:focus {
+    outline: none;
+    border-color: var(--yellow);
+    box-shadow: 0 0 0 2px rgba(247,201,72,0.25);
+}
+
+input[type=range] {
+    width: 100%;
+}
+
+.range-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.primary {
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--yellow), #f4b400);
+    border: none;
+    border-radius: 14px;
+    font-family: "Afacad", system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.value-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.value-card {
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 20px;
+    transition: 0.3s ease;
+}
+
+.value-card.active {
+    border-color: var(--yellow);
+    box-shadow:
+        0 0 0 1px rgba(247,201,72,0.4),
+        0 20px 40px rgba(247,201,72,0.15);
+}
+
+.value-card h3 {
+    margin-top: 0;
+}
+
+.value-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.4;
+}
+
+.summary {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.currency {
+    font-size: 14px;
+    color: var(--muted);
+}
+
+.secondary {
+    padding: 12px 16px;
+    border-radius: 12px;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: "Afacad", system-ui, sans-serif;
+    cursor: pointer;
+}
+
+.pitch {
+    margin-top: 28px;
+    font-size: 14px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+    .value-grid {
+        grid-template-columns: 1fr;
+    }
+}

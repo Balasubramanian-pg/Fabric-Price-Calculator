@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Microsoft Fabric | Value & Pricing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="app">
+
+<header>
+    <div class="logo">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M1.273 4.153a.971.971 0 0 1 .917-.65h21.325a.486.486 0 0 1 .458.646l-1.245 3.56a.971.971 0 0 1-.917.65H.486a.486.486 0 0 1-.459-.646Zm4.855 6.07a.971.971 0 0 1 .917-.65h8.337a.486.486 0 0 1 .458.645l-1.245 3.56a.971.971 0 0 1-.917.65H5.341a.486.486 0 0 1-.458-.646Zm2.698 6.068a.971.971 0 0 1 .917-.65h3.482a.486.486 0 0 1 .458.646l-1.246 3.56a.971.971 0 0 1-.916.65H8.039a.486.486 0 0 1-.458-.646Z"/>
+        </svg>
+    </div>
+    <div>
+        <h1>Microsoft Fabric</h1>
+        <p>Capacity pricing translated into DW and BI value</p>
+    </div>
+</header>
+
+<main class="grid">
+
+    <section class="panel">
+        <h2>Configuration</h2>
+
+        <div class="field">
+            <label>Fabric Capacity</label>
+            <select id="sku">
+                <option value="F2">F2 · Departmental BI</option>
+                <option value="F4">F4 · Team Analytics</option>
+                <option value="F8">F8 · Business Unit DW</option>
+                <option value="F16">F16 · Enterprise BI Core</option>
+                <option value="F32">F32 · Multi-Domain Analytics</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Pricing Model</label>
+            <select id="model">
+                <option value="payg">Pay-As-You-Go</option>
+                <option value="reserved">1-Year Reserved</option>
+            </select>
+        </div>
+
+        <div class="field">
+            <label>Monthly Usage</label>
+            <input type="range" id="hours" min="300" max="730" value="730">
+            <div class="range-meta">
+                <span>300 hrs</span>
+                <span id="hoursLabel">730 hrs</span>
+            </div>
+        </div>
+
+        <button class="primary" onclick="calculate()">Calculate Value</button>
+    </section>
+
+    <section class="panel">
+        <h2>What You Get</h2>
+
+        <div class="value-grid">
+            <div class="value-card" data-min="0">
+                <h3>Unified Storage</h3>
+                <p>OneLake eliminates data duplication across DW, BI, and engineering workloads.</p>
+            </div>
+            <div class="value-card" data-min="4">
+                <h3>Enterprise Warehouse</h3>
+                <p>ACID SQL analytics with star schemas and governed reporting marts.</p>
+            </div>
+            <div class="value-card" data-min="8">
+                <h3>Lakehouse Analytics</h3>
+                <p>Spark-based transformations and medallion architecture on shared data.</p>
+            </div>
+            <div class="value-card" data-min="16">
+                <h3>Cross-Team BI</h3>
+                <p>High concurrency Power BI semantic models with predictable performance.</p>
+            </div>
+            <div class="value-card" data-min="32">
+                <h3>Scale & Concurrency</h3>
+                <p>Supports large user bases, heavy refresh cycles, and real-time dashboards.</p>
+            </div>
+        </div>
+
+        <div class="summary">
+            <div>
+                <div class="price" id="price">$0.00</div>
+                <div class="currency" id="currency">USD / month</div>
+            </div>
+            <button class="secondary" onclick="toggleCurrency()">USD ↔ INR</button>
+        </div>
+
+        <div class="pitch" id="pitch"></div>
+    </section>
+
+</main>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
